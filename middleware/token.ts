@@ -26,3 +26,7 @@ export function authorization(req:any, res:any, next:any) {
    }  
    next();   
 }  
+
+export {
+   jwt
+}
