@@ -9,9 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/aoticombr/node.git"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
+  
   "name": "aotinode",
   "author": "krobrelus",
   "dependencies": {
