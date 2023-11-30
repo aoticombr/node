@@ -1,19 +1,31 @@
 {
+  "name": "aotinode",
   "version": "0.1.10",
-  "license": "MIT",
-  "main": "index.js",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "scripts": {
+    "build": "tsc --declaration",
+    "dev": "nodemon --watch \"src//\" --exec \"ts-node src/sample.ts\" -e ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aoticombr/node.git"
   },
-  "name": "aotinode",
+  "keywords": [],
   "author": "krobrelus",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.1",
+    "@types/pg": "^8.10.9",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
   "dependencies": {
-    "@types/node": "^20.10.0",
-    "https": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
     "react-native-uuid": "^2.0.1"
