@@ -1,6 +1,7 @@
 import { degublog } from "./log";
 import { Pool, types } from "pg";
 import {DB_PG}  from "../constantes/consts";
+import {NextFunction} from 'express';
 
 
 
@@ -138,7 +139,7 @@ export async function Query(conn:any, sql:any,  close:boolean = true){
        
 }
 export async function Post_Query(
-  select: string,filt:any, plimit:number = 50, res:any, next:any ) {
+  select: string,filt:any, plimit:number = 50, res:any, next:NextFunction) {
 
   const conn = await Connect(); 
   try {
@@ -191,7 +192,7 @@ export async function Simple_Insert_Query(sql: string) {
   }
   
 }  
-export async function Insert_Query(sql: string,req:any, res:any, next:any ) {
+export async function Insert_Query(sql: string,req:any, res:any, next:NextFunction ) {
   const conn = <any>await Connect(//pool
     );
   try {
@@ -213,7 +214,7 @@ export async function Insert_Query(sql: string,req:any, res:any, next:any ) {
    
 } 
 export async function Update_Query(//pool:any, 
-  sql: string,req:any, res:any, next:any  ) {
+  sql: string,req:any, res:any, next:NextFunction  ) {
   const conn = <any> await Connect(//pool
     ); degublog('Connect'); 
   try {
