@@ -84,7 +84,7 @@ function getConvertQry(filt) {
             }
             else if (tipo == 'in') {
                 if (valor.length > 0) {
-                    qr += " and ".concat(campo, " in ('").concat(valor.join(', '), "') ");
+                    qr += " and ".concat(campo, " in (").concat(valor.join(', '), ") ");
                 }
             }
             else
