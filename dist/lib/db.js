@@ -83,7 +83,9 @@ function getConvertQry(filt) {
                 qr += " and ".concat(campo, " <='").concat(valor, "' ");
             }
             else if (tipo == 'in') {
-                qr += " and ".concat(campo, " in ('").concat(valor.join(', '), "') ");
+                if (valor.length > 0) {
+                    qr += " and ".concat(campo, " in ('").concat(valor.join(', '), "') ");
+                }
             }
             else
                 qr += " and upper(".concat(campo, ") like upper('").concat(valor, "%') ");

@@ -35,7 +35,11 @@ export function getConvertQry(filt:[]){
       else if (tipo   == '%=%') { qr += ` and upper(${campo}) like upper('%${valor}%') `;}
       else if (tipo   == '>=') { qr += ` and ${campo} >= '${valor}' `;}
       else if (tipo   == '<=') { qr += ` and ${campo} <='${valor}' `;}
-      else if (tipo   == 'in') { qr += ` and ${campo} in ('${valor.join(', ')}') `;}
+      else if (tipo   == 'in') { 
+        if (valor.length > 0) {
+          qr += ` and ${campo} in ('${valor.join(', ')}') `;
+        }
+      }
       else
         qr += ` and upper(${campo}) like upper('${valor}%') `;
       }
