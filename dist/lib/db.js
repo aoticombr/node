@@ -82,6 +82,9 @@ function getConvertQry(filt) {
             else if (tipo == '<=') {
                 qr += " and ".concat(campo, " <='").concat(valor, "' ");
             }
+            else if (tipo == 'in') {
+                qr += " and ".concat(campo, " in ('").concat(valor.join(', '), "') ");
+            }
             else
                 qr += " and upper(".concat(campo, ") like upper('").concat(valor, "%') ");
         }

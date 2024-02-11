@@ -1,7 +1,3 @@
-
-
-
-  
 export function Auth(req:any, res:any, next:any){
     if (!req.body.auth) {
       res.status(200).json({error: 'Missing Authorization Body'});      
